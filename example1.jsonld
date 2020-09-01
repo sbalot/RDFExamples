@@ -1,0 +1,7 @@
+{
+    "@context": "http://schema.org/",
+    "alternateName": "jdoe",
+    "email": "jdoe@example.com",
+    "familyName": "Doe",
+    "givenName": "John"
+}
