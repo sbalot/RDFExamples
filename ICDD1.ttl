@@ -1,0 +1,120 @@
+#This file demonstrates checking the the ExtendedLinkSet predicates do not contain any user defined link types
+#Content modified for testing on Node JS for icddonline research
+
+#Standard prefixes
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ct: <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ExtendedLinkset: <https://standards.iso.org/iso/21597/-2/ed-1/en/ExtendedLinkSet#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix reiff: <www.//example.org/reiff#>.
+
+
+reiff:Container1
+  rdf:type reiff:ContainerDescription ;
+  ct:conformanceIndicator "ICDD-Part1-Container" ;
+  ct:containsDocument reiff:photo1 ;
+  ct:containsDocument reiff:photo2 ;
+  ct:containsDocument reiff:photo3 ;
+  ct:containsDocument reiff:photo4 ;
+  ct:containsDocument reiff:ArchitecturalModel ;
+  ct:containsDocument reiff:SeminarRoomDrawing ;
+  ct:createdBy reiff:madhusvel ;
+  ct:creationDate "2020-07-29T14:24:28.167"^^xsd:dateTime ;
+  ct:description "icdd reiff building example:  demonstration of icdd for the faculty of architecture building" ;
+  ct:publishedBy reiff:teamreiff ;
+  ct:versionDescription "first version" ;
+  ct:versionID "1" ;
+.
+
+  reiff:ArchitecturalModel
+    rdf:type ct:InternalDocument ;
+    ct:createdBy reiff:madhusvel ;
+    ct:creationDate "2018-05-28T14:13:28.167"^^xsd:dateTime ;
+    ct:description "Architectural model of the Design Computation chair at Reiff" ;
+    ct:filename "ArchitecturalModel.ifc" ;
+    ct:filetype "ifc" ;
+    ct:format "application/x-extension-ifc" ;
+    ct:name "ArchitecturalModel.ifc" ;
+    ct:versionDescription "first version" ;
+    ct:versionID "1" ;
+.
+
+
+  reiff:photo1
+    rdf:type ct:InternalDocument ;
+    ct:createdBy reiff:madhusvel ;
+    ct:creationDate "2018-05-28T14:13:28.167"^^xsd:dateTime ;
+    ct:description "Foyer image" ;
+    ct:filename "photo1.jpg" ;
+    ct:filetype "jpg" ;
+    ct:format "image/jpg" ;
+    ct:name "photo1.jpg" ;
+    ct:versionDescription "first version" ;
+    ct:versionID "1" ;
+  .
+
+  reiff:photo2
+    rdf:type ct:InternalDocument ;
+    ct:createdBy reiff:madhusvel ;
+    ct:creationDate "2018-05-28T14:13:28.167"^^xsd:dateTime ;
+    ct:description "Seminar room image" ;
+    ct:filename "photo2.jpg" ;
+    ct:filetype "jpg" ;
+    ct:format "image/jpg" ;
+    ct:name "photo2.jpg" ;
+    ct:versionDescription "first version" ;
+    ct:versionID "1" ;
+  .
+
+  reiff:photo3
+    rdf:type ct:InternalDocument ;
+    ct:createdBy reiff:madhusvel ;
+    ct:creationDate "2018-05-28T14:13:28.167"^^xsd:dateTime ;
+    ct:description "Downstairs workspace" ;
+    ct:filename "photo3.jpg" ;
+    ct:filetype "jpg" ;
+    ct:format "image/jpg" ;
+    ct:name "photo3.jpg" ;
+    ct:versionDescription "first version" ;
+    ct:versionID "1" ;
+  .
+
+  reiff:photo4
+    rdf:type ct:InternalDocument ;
+    ct:createdBy reiff:madhusvel ;
+    ct:creationDate "2018-05-28T14:13:28.167"^^xsd:dateTime ;
+    ct:description "Upstairs workspace" ;
+    ct:filename "photo4.jpg" ;
+    ct:filetype "jpg" ;
+    ct:format "image/jpg" ;
+    ct:name "photo4.jpg" ;
+    ct:versionDescription "first version" ;
+    ct:versionID "1" ;
+  .
+
+  reiff:SeminarRoomDrawing
+  rdf:type ct:InternalDocument ;
+  ct:createdBy reiff:madhusvel ;
+  ct:creationDate "2018-05-28T14:13:28.167"^^xsd:dateTime ;
+  ct:description "Floor Plan of Seminar room" ;
+  ct:filename "seminarRoom.pdf" ;
+  ct:filetype "pdf" ;
+  ct:format "document/pdf" ;
+  ct:name "seminarRoom.pdf" ;
+  ct:versionDescription "first version" ;
+  ct:versionID "1" ;
+  ExtendedLinkset:IsControlledBy <www.example.org/reiff/#id68719912-f0aa-4934-b6b9-1fa48e4eaae0> ;
+  ExtendedLinkset:IsElaboratedBy <www.example.org/reiff/#idcbdea6c8-54b4-4c33-b657-021f56c99a96> ;
+  ExtendedLinkset:IsIdenticalTo <www.example.org/reiff/#id5fa4ead6-80f3-4e45-bcdd-ec892eaf9d1c> ;
+.
+
+
+reiff:ArchitecturalModel ExtendedLinkset:IsElaboratedBy reiff:seminarRoom.
+reiff:photo1 ExtendedLinkset:isPartOf reiff:ArchitecturalModel.
+reiff:photo2 ExtendedLinkset:isPartOf reiff:ArchitecturalModel.
+reiff:photo3 ExtendedLinkset:isPartOf reiff:ArchitecturalModel.
+reiff:photo4 ExtendedLinkset:isPartOf reiff:ArchitecturalModel.
+
